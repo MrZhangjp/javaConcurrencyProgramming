@@ -1,5 +1,7 @@
 package com.zhangjp.test1;
 
+import org.springframework.util.StringUtils;
+
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -15,8 +17,18 @@ public class TryConcurrency {
 
     public static void main(String[] args) {
         //新特性写法
-        new Thread(TryConcurrency::browseNews).start();
-        enjoyMusic();
+        //new Thread(TryConcurrency::browseNews).start();
+        //enjoyMusic();
+
+        while(true){
+            String aa = "111";
+            while (true){
+                if("111".equals(aa)){
+                    System.out.println("我是死循环");
+                    return;
+                }
+            }
+        }
     }
 
     private static void browseNews(){
